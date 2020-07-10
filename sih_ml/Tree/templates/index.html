@@ -1,0 +1,19 @@
+{% for i in qs %}
+{% if i.Level == 9 %}
+{{ i.name }}
+{{ i.parent }}
+{{ i.Level }}
+{% endif %}
+<hr>
+{% if i.Level == 8 %}
+{{ i.name }}
+{% endif %}
+{% if i.Level == 7 %}
+{{ i.name }}
+{% endif %}
+{% endfor %} 
+
+{% comment %} {% for i in qs %}
+{{ i.name }}
+<hr>
+{% endfor %} {% endcomment %}
