@@ -27,12 +27,12 @@ def analysis(request):
         if serializer.is_valid():
             name=serializer.validated_data['username']
             serializer.save()
-            
+
             obj=get_object_or_404(Result,username=name)
-            data = ResumeParser(obj.Resume.url).get_extracted_data()
+            data = ResumeParser("/home/sihml/ml-sih/sih_ml"+(obj.Resume.url)).get_extracted_data()
             #data=obj.Resume.url
             return Response(data)
-        else:            
+        else:
             return Response(serializer.errors)
 
 

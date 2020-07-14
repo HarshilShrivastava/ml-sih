@@ -25,7 +25,7 @@ SECRET_KEY = '1s=^kg1or22w%sbg^e$(t-i%4d3+ryk@4ziid6*00skt*guqb8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'Tree',
     'django.contrib.admin',
     'resume',
+    'corsheaders',
+
     'rest_framework',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -119,5 +122,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+MEDIA_URL = '/media/'
+CORS_ORIGIN_ALLOW_ALL=True
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT=os.path.join(BASE_DIR, 'static')

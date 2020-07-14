@@ -1,21 +1,55 @@
+<!-- {% load static %}
+<link rel="stylesheet" href="{% static '../style.css' %}"> -->
 {% for i in qs %}
+<!-- {{i.name}} -->
 {% if i.Level == 9 %}
-{{ i.name }}
-{{ i.parent }}
-{{ i.Level }}
+<div class='try' style='color: black; '>{{ i.name }}<div style='text-align: right; margin-right: 150px;'>{{"Level 9"}}
+    </div>
+</div>
 {% endif %}
-<hr>
 {% if i.Level == 8 %}
-{{ i.name }}
+<div class='try1' style='color: blue; '>{{ i.name }} <div style='text-align: right; margin-right: 150px;'>{{"Level 8"}}
+    </div>
+</div>
 {% endif %}
 {% if i.Level == 7 %}
-{{ i.name }}
-{% endif %}
-{% endfor %} 
-
-{% comment %} {% for i in qs %}
-{{ i.name }}
-<hr>
-{% endfor %} {% endcomment %}
-{% for i in qs %}
-{% endfor %} 
+<div class='try2' style='color: red;'>{{ i.name }} <div style='text-align: right; margin-right: 150px;'>{{"Level 7"}}
+    </div>
+    {% endif %}
+    {% if i.Level == 6 %}
+    <div class='try3' style='color: orange; '>{{ i.name }} <div style='text-align: right; margin-right: 150px;'>
+            {{"Level 6"}}
+        </div>
+        {% endif %}
+        {% if i.Level == 5 %}
+        <div class='try3' style='color: rgb(4, 81, 100); '>{{ i.name }} <div
+                style='text-align: right; margin-right: 150px;'>{{"Level 5"}}
+            </div>
+        </div>
+        {% endif %}
+        {% if i.Level == 4 %}
+        <div class='try3' style='color: rgb(100, 2, 56);'>{{ i.name }}<div
+                style='text-align: right; margin-right: 150px;'>{{"Level 4"}}
+            </div>
+        </div>
+        {% endif %}
+        {% if i.Level == 3 %}
+        <div class='try3' style='color: rgb(83, 46, 3); '>{{ i.name }}<div
+                style='text-align: right; margin-right: 150px;'>{{"Level 3"}}
+            </div>
+        </div>
+        {% endif %}
+        {% if i.Level == 2 %}
+        <div class='try3' style='color: rgb(70, 0, 128); '>{{ i.name }}<div
+                style='text-align: right; margin-right: 150px;'>{{"Level 2"}}
+            </div>
+        </div>
+        {% endif %}
+        {% if i.Level == 1 %}
+        <div class='try3' style='color: rgb(95, 38, 38); '>{{ i.name }}<div
+                style='text-align: right; margin-right: 150px;'>{{"Level 1"}}
+            </div>
+        </div>
+        {% endif %}
+        <hr>
+        {% endfor %}
